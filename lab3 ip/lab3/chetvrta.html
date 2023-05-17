@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab3 - Zadaca4</title>
+</head>
+<body onload="main()">
+
+<div class="driver-testcases" id="driver-testcases">
+
+</div>
+
+<script>
+    function main() {
+
+        let booksArray = [
+            new Book("Murder on the Orient Express", "Agatha Christie ", false),
+            new Book("The Sun Also Rises", "Ernest Hemingway", true),
+            new Book("Crime and Punishment ", "Fyodor Dostoevsky", true),
+            new Book("Les Miserables", "Victor Hugo", true),
+            new Book("Death on the Nile", "Agatha Christie", false),
+
+        ];
+
+        for (let i = 0; i < booksArray.length; i++) {
+            if (booksArray[i].alreadyRead === true) {
+                let message = "'You already read "
+                    + "\"" + booksArray[i].title + "\" by "
+                    + "\"" + booksArray[i].author + "\"'";
+                console.log(message);
+
+                
+
+                document.getElementById("driver-testcases").innerHTML +=
+                    message +  "<br>";
+
+            } else {
+
+                let message = "'You still need to read "
+                    + "\"" + booksArray[i].title + "\" by "
+                    + "\"" + booksArray[i].author + "\"'";
+                console.log(message);
+
+
+                document.getElementById("driver-testcases").innerHTML +=
+                    message + "<br>";
+            }
+        }
+    }
+
+    function Book(title, author, alreadyRead) {
+        this.title = title;
+        this.author = author;
+        this.alreadyRead = alreadyRead;
+    }
+</script>
+
+</body>
+</html>
